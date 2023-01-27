@@ -36,3 +36,34 @@ button.forEach((button) => {
     }
   });
 });
+
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  // direction: "vertical",
+  loop: true,
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
+  parallax: true,
+  observer: true,
+  observeParents: true,
+  // autoHeight: true,
+  slidesPerView: "auto",
+  speed: 1000,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  // scrollbar: {
+  //   el: ".swiper-scrollbar",
+  // },
+});

@@ -30,6 +30,7 @@ button {
   --primary-color: #32a64f;
   --secondary-color: #006118;
   --third-color: rgb(255, 129, 129);
+  --swiper-theme-color: #da2238 !important;
 }
 
 body {
@@ -39,6 +40,7 @@ body {
   background-image: url("../img/background.jpg");
   background-attachment: fixed;
   background-position: center;
+  background-size: cover;
 }
 
 .wrapper {
@@ -170,6 +172,10 @@ body {
 .page {
   min-width: 0;
 }
+.page__breads {
+  border-bottom: 1px solid gray;
+  margin-bottom: 15px;
+}
 .page__container {
   background: rgb(255, 255, 255);
   display: grid;
@@ -183,7 +189,7 @@ body {
   }
 }
 .page__body {
-  padding: 15px 0px 15px 15px;
+  padding: 0px 0px 15px 15px;
 }
 @media (max-width: 1024px) {
   .page__body {
@@ -231,6 +237,11 @@ body {
   top: 6px;
   transform: rotate(180deg);
 }
+.menu__link_active {
+  color: var(--third-color);
+  border-left: 2px solid var(--third-color);
+  padding-left: 10px;
+}
 .menu__link {
   display: inline-block;
   width: 100%;
@@ -239,6 +250,11 @@ body {
 }
 .has-list-sub > .menu__link {
   padding-left: 18px;
+}
+@media (max-width: 1024px) {
+  .menu__link {
+    font-size: 1.15rem;
+  }
 }
 .menu__link:hover {
   color: var(--third-color);
@@ -274,7 +290,32 @@ body {
   padding: 20px 40px;
 }
 
+.breads {
+  min-height: 40px;
+  background: var(--primary-color);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.breads__link {
+  text-decoration: underline;
+  color: var(--text-color-invert);
+  transition: color 0.3s ease 0s;
+}
+@media (max-width: 768px) {
+  .breads__link {
+    font-size: 0.8rem;
+  }
+}
+.breads__link:hover {
+  color: var(--secondary-color);
+}
+.breads__link_active {
+  color: var(--text-color-invert);
+}
+
 .button-burger {
+  flex: 0 0 auto;
   --button-color: black;
   overflow: hidden;
 }
@@ -309,4 +350,21 @@ body {
 }
 .developer:hover {
   color: red;
+}
+
+.swiper {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

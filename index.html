@@ -15,6 +15,8 @@
 	<!-- <script src="https://kit.fontawesome.com/29ec705b00.js" crossorigin="anonymous"></script> -->
 	<link rel="stylesheet" href="./assets/css/style.css">
 	<link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -28,7 +30,7 @@
 							<button class="search__btn"></button>
 						</form>
 						<button class="button-burger" aria-expanded="false">
-							<svg stroke="black" fill="none" class="hamburger" viewBox="-10 -10 120 120" width="50">
+							<svg stroke="white" fill="none" class="hamburger" viewBox="-10 -10 120 120" width="50">
 								<path class="line" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"
 									d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
 								</path>
@@ -42,7 +44,7 @@
 
 				</div>
 				<div class="header__bottom">
-					<a href="/" class="header__logo logo">
+					<a href="./" class="header__logo logo">
 						<img class="logo__img" src="./assets/img/logo.png" alt="Логотип">
 					</a>
 					<div class="header__body">
@@ -77,10 +79,10 @@
 					<nav class="sidebar__menu menu">
 						<ul class="menu__list">
 							<li class="menu__item">
-								<a href="/" class="menu__link">Главная</a>
+								<a href="/" class="menu__link menu__link_active">Главная</a>
 							</li>
 							<li class="menu__item">
-								<a href="" class="menu__link">Образование по навигатору</a>
+								<a href="./obrazovanie-po-navigatoru.html" class="menu__link">Образование по навигатору</a>
 							</li>
 							<li class="menu__item">
 								<span class="menu__link">Сведения об образовательной организации</span>
@@ -241,83 +243,288 @@
 					</nav>
 				</div>
 				<div class="page__body">
-					<div class="page__breads">
+					<div class="page__breads breads">
+						<span class="breads__link_active">Главная</span>
+					</div>
+
+					<div class="page__content">
+						<div class="gosuslugi">
+							<script src="https://pos.gosuslugi.ru/bin/script.min.js"></script>
+							<style>
+								#js-show-iframe-wrapper {
+									position: relative;
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									width: 100%;
+									min-width: 293px;
+									max-width: 100%;
+									background: linear-gradient(138.4deg, #38bafe 26.49%, #2d73bc 79.45%);
+									color: #fff;
+									cursor: pointer
+								}
+
+								#js-show-iframe-wrapper .pos-banner-fluid * {
+									box-sizing: border-box
+								}
+
+								#js-show-iframe-wrapper .pos-banner-fluid .pos-banner-btn_2 {
+									display: block;
+									width: 240px;
+									min-height: 56px;
+									font-size: 18px;
+									line-height: 24px;
+									cursor: pointer;
+									background: #0d4cd3;
+									color: #fff;
+									border: none;
+									border-radius: 8px;
+									outline: 0
+								}
+
+								#js-show-iframe-wrapper .pos-banner-fluid .pos-banner-btn_2:hover {
+									background: #1d5deb
+								}
+
+								#js-show-iframe-wrapper .pos-banner-fluid .pos-banner-btn_2:focus {
+									background: #2a63ad
+								}
+
+								#js-show-iframe-wrapper .pos-banner-fluid .pos-banner-btn_2:active {
+									background: #2a63ad
+								}
+
+								@-webkit-keyframes fadeInFromNone {
+									0% {
+										display: none;
+										opacity: 0
+									}
+
+									1% {
+										display: block;
+										opacity: 0
+									}
+
+									100% {
+										display: block;
+										opacity: 1
+									}
+								}
+
+								@keyframes fadeInFromNone {
+									0% {
+										display: none;
+										opacity: 0
+									}
+
+									1% {
+										display: block;
+										opacity: 0
+									}
+
+									100% {
+										display: block;
+										opacity: 1
+									}
+								}
+
+								@font-face {
+									font-family: LatoWebLight;
+									src: url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Light.woff2) format("woff2"), url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Light.woff) format("woff"), url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Light.ttf) format("truetype");
+									font-style: normal;
+									font-weight: 400
+								}
+
+								@font-face {
+									font-family: LatoWeb;
+									src: url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Regular.woff2) format("woff2"), url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Regular.woff) format("woff"), url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Regular.ttf) format("truetype");
+									font-style: normal;
+									font-weight: 400
+								}
+
+								@font-face {
+									font-family: LatoWebBold;
+									src: url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Bold.woff2) format("woff2"), url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Bold.woff) format("woff"), url(https://pos.gosuslugi.ru/bin/fonts/Lato/fonts/Lato-Bold.ttf) format("truetype");
+									font-style: normal;
+									font-weight: 400
+								}
+
+								@font-face {
+									font-family: RobotoWebLight;
+									src: url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Light.woff2) format("woff2"), url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Light.woff) format("woff"), url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Light.ttf) format("truetype");
+									font-style: normal;
+									font-weight: 400
+								}
+
+								@font-face {
+									font-family: RobotoWebRegular;
+									src: url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Regular.woff2) format("woff2"), url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Regular.woff) format("woff"), url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+									font-style: normal;
+									font-weight: 400
+								}
+
+								@font-face {
+									font-family: RobotoWebBold;
+									src: url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Bold.woff2) format("woff2"), url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Bold.woff) format("woff"), url(https://pos.gosuslugi.ru/bin/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+									font-style: normal;
+									font-weight: 400
+								}
+
+								@font-face {
+									font-family: ScadaWebRegular;
+									src: url(https://pos.gosuslugi.ru/bin/fonts/Scada/Scada-Regular.woff2) format("woff2"), url(https://pos.gosuslugi.ru/bin/fonts/Scada/Scada-Regular.woff) format("woff"), url(https://pos.gosuslugi.ru/bin/fonts/Scada/Scada-Regular.ttf) format("truetype");
+									font-style: normal;
+									font-weight: 400
+								}
+
+								@font-face {
+									font-family: ScadaWebBold;
+									src: url(https://pos.gosuslugi.ru/bin/fonts/Scada/Scada-Bold.woff2) format("woff2"), url(https://pos.gosuslugi.ru/bin/fonts/Scada/Scada-Bold.woff) format("woff"), url(https://pos.gosuslugi.ru/bin/fonts/Scada/Scada-Bold.ttf) format("truetype");
+									font-style: normal;
+									font-weight: 400
+								}
+							</style>
+
+							<style>
+								#js-show-iframe-wrapper .bf-2 {
+									position: relative;
+									display: grid;
+									grid-template-columns: var(--pos-banner-fluid-2__grid-template-columns);
+									grid-template-rows: var(--pos-banner-fluid-2__grid-template-rows);
+									width: 100%;
+									max-width: 1060px;
+									font-family: LatoWeb, sans-serif;
+									box-sizing: border-box
+								}
+
+								#js-show-iframe-wrapper .bf-2__decor {
+									grid-column: var(--pos-banner-fluid-2__decor-grid-column);
+									grid-row: var(--pos-banner-fluid-2__decor-grid-row);
+									padding: var(--pos-banner-fluid-2__decor-padding);
+									background: var(--pos-banner-fluid-2__bg-url) var(--pos-banner-fluid-2__bg-position) no-repeat;
+									background-size: var(--pos-banner-fluid-2__bg-size)
+								}
+
+								#js-show-iframe-wrapper .bf-2__logo-wrap {
+									position: absolute;
+									top: var(--pos-banner-fluid-2__logo-wrap-top);
+									bottom: var(--pos-banner-fluid-2__logo-wrap-bottom);
+									right: 0;
+									display: flex;
+									flex-direction: column;
+									align-items: flex-end;
+									padding: var(--pos-banner-fluid-2__logo-wrap-padding);
+									background: #2d73bc;
+									border-radius: var(--pos-banner-fluid-2__logo-wrap-border-radius)
+								}
+
+								#js-show-iframe-wrapper .bf-2__logo {
+									width: 128px
+								}
+
+								#js-show-iframe-wrapper .bf-2__slogan {
+									font-family: LatoWebBold, sans-serif;
+									font-size: var(--pos-banner-fluid-2__slogan-font-size);
+									line-height: var(--pos-banner-fluid-2__slogan-line-height);
+									color: #fff
+								}
+
+								#js-show-iframe-wrapper .bf-2__content {
+									padding: var(--pos-banner-fluid-2__content-padding)
+								}
+
+								#js-show-iframe-wrapper .bf-2__description {
+									display: flex;
+									flex-direction: column;
+									margin-bottom: 24px
+								}
+
+								#js-show-iframe-wrapper .bf-2__text {
+									margin-bottom: 12px;
+									font-size: 24px;
+									line-height: 32px;
+									font-family: LatoWebBold, sans-serif;
+									color: #fff
+								}
+
+								#js-show-iframe-wrapper .bf-2__text_small {
+									margin-bottom: 0;
+									font-size: 16px;
+									line-height: 24px;
+									font-family: LatoWeb, sans-serif
+								}
+
+								#js-show-iframe-wrapper .bf-2__btn-wrap {
+									display: flex;
+									align-items: center;
+									justify-content: center
+								}
+							</style>
+							<div id="js-show-iframe-wrapper">
+								<div class="pos-banner-fluid bf-2">
+
+									<div class="bf-2__decor">
+										<div class="bf-2__logo-wrap">
+											<img class="bf-2__logo"
+												src="https://pos.gosuslugi.ru/bin/banner-fluid/gosuslugi-logo.svg" alt="Госуслуги">
+											<div class="bf-2__slogan">Решаем вместе</div>
+										</div>
+									</div>
+									<div class="bf-2__content">
+
+										<div class="bf-2__description">
+											<span class="bf-2__text">
+												Не убран мусор, яма на дороге, не горит фонарь?
+											</span>
+											<span class="bf-2__text bf-2__text_small">
+												Столкнулись с проблемой&nbsp;— сообщите о ней!
+											</span>
+										</div>
+
+										<div class="bf-2__btn-wrap">
+											<!-- pos-banner-btn_2 не удалять; другие классы не добавлять -->
+											<button class="pos-banner-btn_2" type="button" style="width: 240px;">Сообщить о
+												проблеме</button>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+							<script>
+
+								(function () {
+									"use strict"; function ownKeys(e, t) { var o = Object.keys(e); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); if (t) n = n.filter(function (t) { return Object.getOwnPropertyDescriptor(e, t).enumerable }); o.push.apply(o, n) } return o } function _objectSpread(e) { for (var t = 1; t < arguments.length; t++) { var o = null != arguments[t] ? arguments[t] : {}; if (t % 2) ownKeys(Object(o), true).forEach(function (t) { _defineProperty(e, t, o[t]) }); else if (Object.getOwnPropertyDescriptors) Object.defineProperties(e, Object.getOwnPropertyDescriptors(o)); else ownKeys(Object(o)).forEach(function (t) { Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(o, t)) }) } return e } function _defineProperty(e, t, o) { if (t in e) Object.defineProperty(e, t, { value: o, enumerable: true, configurable: true, writable: true }); else e[t] = o; return e } var POS_PREFIX_2 = "--pos-banner-fluid-2__", posOptionsInitial = { "grid-template-columns": "100%", "grid-template-rows": "310px auto", "decor-grid-column": "initial", "decor-grid-row": "initial", "decor-padding": "30px 30px 0 30px", "bg-url": "url('https://pos.gosuslugi.ru/bin/banner-fluid/2/banner-fluid-bg-2-small.svg')", "bg-position": "calc(10% + 64px) calc(100% - 20px)", "bg-size": "cover", "content-padding": "0 30px 30px 30px", "slogan-font-size": "20px", "slogan-line-height": "32px", "logo-wrap-padding": "20px 30px 30px 40px", "logo-wrap-top": "0", "logo-wrap-bottom": "initial", "logo-wrap-border-radius": "0 0 0 80px" }, setStyles = function (e, t) { Object.keys(e).forEach(function (o) { t.style.setProperty(POS_PREFIX_2 + o, e[o]) }) }, removeStyles = function (e, t) { Object.keys(e).forEach(function (e) { t.style.removeProperty(POS_PREFIX_2 + e) }) }; function changePosBannerOnResize() { var e = document.documentElement, t = _objectSpread({}, posOptionsInitial), o = document.getElementById("js-show-iframe-wrapper"), n = o ? o.offsetWidth : document.body.offsetWidth; if (n > 405) t["slogan-font-size"] = "24px", t["logo-wrap-padding"] = "30px 50px 30px 70px"; if (n > 500) t["grid-template-columns"] = "min-content 1fr", t["grid-template-rows"] = "100%", t["decor-grid-column"] = "2", t["decor-grid-row"] = "1", t["decor-padding"] = "30px 30px 30px 0", t["content-padding"] = "30px", t["bg-position"] = "0% calc(100% - 70px)", t["logo-wrap-padding"] = "30px 30px 24px 40px", t["logo-wrap-top"] = "initial", t["logo-wrap-bottom"] = "0", t["logo-wrap-border-radius"] = "80px 0 0 0"; if (n > 585) t["bg-position"] = "0% calc(100% - 6px)"; if (n > 800) t["bg-url"] = "url('https://pos.gosuslugi.ru/bin/banner-fluid/2/banner-fluid-bg-2.svg')", t["bg-position"] = "0% center"; if (n > 1020) t["slogan-font-size"] = "32px", t["line-height"] = "40px", t["logo-wrap-padding"] = "30px 30px 24px 50px"; setStyles(t, e) } changePosBannerOnResize(), window.addEventListener("resize", changePosBannerOnResize), window.onunload = function () { var e = document.documentElement; window.removeEventListener("resize", changePosBannerOnResize), removeStyles(posOptionsInitial, e) };
+								})()
+							</script>
+							<script>Widget("https://pos.gosuslugi.ru/form", 230940)</script>
+						</div>
+						<!-- Slider main container -->
+
+						<div class="swiper">
+							<!-- Additional required wrapper -->
+							<div class="swiper-wrapper">
+								<!-- Slides -->
+								<div class="swiper-slide"><img src="./assets/img/swiper-img-1.jpg" alt="Фото"></div>
+								<div class="swiper-slide"><a target="_blank" href="https://vk.com/club191188689">
+										<img src="./assets/img/swiper-img-2.jpg" alt="Фото">
+									</a></div>
+								<div class="swiper-slide"><img src="./assets/img/swiper-img-3.jpg" alt="Фото"></div>
+
+							</div>
+							<!-- If we need pagination -->
+							<div class="swiper-pagination"></div>
+
+							<!-- If we need navigation buttons -->
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+
+							<!-- If we need scrollbar -->
+							<div class="swiper-scrollbar"></div>
+						</div>
+
 
 					</div>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aut consectetur nemo a delectus porro iure
-					quaerat atque culpa molestiae. Inventore exercitationem, possimus ad aliquid necessitatibus modi error
-					optio rem, quos asperiores quas tempora, enim molestiae. Architecto ullam atque dolores. Fuga molestiae
-					tenetur reprehenderit. Id, aperiam! Cupiditate, alias nobis expedita praesentium, quibusdam illum numquam
-					vel quae animi quisquam sequi consectetur at fugit delectus ipsa? Earum ullam aperiam inventore placeat
-					quis pariatur aliquam dignissimos atque quidem et consequatur culpa possimus eaque ut beatae maiores sunt
-					molestiae numquam soluta error eligendi modi optio, unde repudiandae! Maxime doloribus, harum dolorem
-					tenetur asperiores a accusamus tempore sint esse. Aut sed voluptatibus tenetur ducimus iste, quae omnis
-					ea natus! Repellendus, facilis tenetur? Deleniti in minus commodi, nulla architecto iusto nam, odit
-					doloremque natus reiciendis amet doloribus reprehenderit non odio cumque corporis rerum sequi quod dolore
-					praesentium porro facilis officiis? Autem eligendi minima adipisci enim tempora delectus non ipsum,
-					itaque sed voluptate ab nihil a alias officiis et impedit, nesciunt dolor laborum sequi asperiores eaque
-					tempore ratione. Explicabo eum consequuntur animi doloremque, delectus autem. Corrupti iure reprehenderit
-					eaque voluptates doloremque unde neque hic quis. Error tempora nesciunt ea expedita modi est. Nemo
-					eligendi, autem expedita asperiores impedit accusamus. Eaque provident dolorem fugiat earum excepturi
-					quibusdam nam qui magnam quam, eligendi accusantium eos repellat omnis cupiditate assumenda cumque,
-					consequatur ex! Veritatis suscipit harum, at illo dolor facilis et similique nihil voluptatum
-					necessitatibus ex porro. Accusantium doloribus autem eum at commodi enim labore eos totam id consequatur
-					velit, quia incidunt, nisi magnam voluptatibus facere iste iusto ab vero? Quam maxime est nostrum debitis
-					tenetur adipisci quasi dolor. Illo ipsa officiis dolor obcaecati cupiditate tenetur quibusdam ad atque
-					fugit reiciendis tempore, similique architecto dolorum perferendis vero nobis voluptatibus ipsam
-					consequuntur, repellendus eaque ullam animi, porro enim! Laborum, adipisci molestiae. Maxime accusamus,
-					rerum repudiandae ratione itaque, quod aliquid delectus, fugit natus architecto fugiat at aspernatur quas
-					qui commodi doloremque dolores. Reiciendis dolor amet laborum, facere laudantium eveniet recusandae
-					repudiandae quos iure ullam, aspernatur voluptatum libero asperiores deserunt modi facilis distinctio
-					mollitia? Eaque recusandae tenetur, aliquam itaque tempore earum laboriosam dolorum adipisci facere
-					libero voluptas incidunt blanditiis possimus ad pariatur vero officiis, maxime dolore quasi repellat
-					voluptates alias, ipsa a. Facere aliquid, aperiam voluptate quod labore, beatae, dolorem omnis
-					accusantium natus recusandae autem sequi voluptatum provident deleniti dicta quibusdam saepe earum
-					exercitationem sapiente consequuntur nulla aut numquam doloremque! Tempora, adipisci at odio quae
-					perferendis laborum temporibus suscipit totam nostrum, placeat deserunt repellendus itaque laudantium
-					maiores sit reiciendis laboriosam, exercitationem a cum? Necessitatibus pariatur, corrupti incidunt nulla
-					architecto ab asperiores rerum aliquam non placeat animi nemo sequi amet dolorum voluptate laudantium
-					libero dolores cum ad tempore suscipit, maxime dolore temporibus facilis? Dolore quibusdam ullam tempore
-					enim reprehenderit, blanditiis repellendus numquam non neque earum quia laboriosam labore maiores, ex
-					sequi quaerat, a maxime obcaecati! Quas, vero magnam ut iusto dolores enim, molestias modi nihil, omnis
-					ad pariatur doloremque voluptatibus quo sapiente adipisci laudantium non. Corporis architecto, reiciendis
-					ab quo sapiente quasi et magni deserunt rem numquam tempora quis amet impedit est quas illum similique.
-					Quos corporis a ad molestias ex! Iusto, autem? Distinctio, eum unde excepturi est officiis quaerat eos
-					aperiam voluptatum cupiditate natus illum dolorum, suscipit eaque assumenda, quisquam rerum fugit modi
-					aliquam dolor. Nulla, eos ducimus expedita non aliquid numquam molestias quod. Amet nisi animi nam odit,
-					quidem sunt fugiat repellendus ullam harum, dicta asperiores aut delectus! Explicabo libero in, facilis
-					nihil aliquam laboriosam quibusdam quaerat, dolores possimus quidem aspernatur eos tempore officia
-					eveniet? Quo sapiente illo eveniet nesciunt quae earum doloremque accusamus id doloribus ab neque
-					dolores, perspiciatis nobis, repellat dicta praesentium vel optio aut, minus delectus iure sed soluta
-					possimus. Fugit ullam libero, delectus id, nam in repudiandae dolorum ea obcaecati ut, quod optio.
-					Corrupti quae architecto rerum velit illum cupiditate quibusdam soluta sequi tenetur, unde libero iste
-					animi delectus pariatur at voluptatibus, error alias consectetur! Iusto tempore pariatur distinctio
-					cumque doloribus ex fugit cupiditate voluptas reprehenderit. Alias ducimus quo dicta maxime totam vel,
-					quam aut saepe cum voluptatem est recusandae deserunt ad impedit voluptatibus illum! Quo asperiores natus
-					excepturi odio, doloremque id quidem explicabo tempore aspernatur possimus ipsum veniam dolores veritatis
-					nisi amet. Nostrum quisquam repudiandae sint provident? Placeat sint sed quaerat culpa, soluta temporibus
-					id distinctio. Expedita minus illo ullam beatae optio alias officiis, maxime minima, id magni dolorem
-					libero facere odit dicta, labore omnis? Suscipit animi, dolore voluptatum, architecto possimus amet est
-					perferendis in harum, ducimus repellendus maxime? Officia esse nulla sed incidunt, quam voluptatibus ipsa
-					deleniti? Quod excepturi est, laborum iste incidunt iusto similique unde dicta, vitae quibusdam eos odit
-					sint provident. Accusantium blanditiis aperiam quasi aspernatur iure consectetur corporis officia eius
-					fugiat quaerat possimus unde perspiciatis ad qui, illum est delectus. Voluptas, unde, velit fuga omnis
-					sint quam commodi sequi doloribus doloremque culpa ad placeat suscipit? Sed suscipit obcaecati enim
-					facilis doloremque commodi! Dignissimos facilis vero laborum accusamus debitis voluptatem officiis
-					recusandae, odio quod, distinctio voluptatibus aliquam quae vel ducimus. Consectetur nisi impedit amet?
-					Recusandae, tenetur deserunt! Iusto repudiandae, esse atque rerum nostrum quaerat corporis assumenda odio
-					natus deserunt? Et sequi deleniti perferendis sed dolorem delectus unde mollitia quas accusamus numquam
-					doloremque velit ab neque modi vero iusto, commodi maxime illo ut quasi eveniet. Error facilis illum quos
-					minus maxime maiores dignissimos mollitia explicabo, placeat optio accusantium cupiditate fugiat autem
-					reprehenderit nostrum obcaecati blanditiis consequuntur officia ducimus laudantium, ullam assumenda
-					cumque in. Officiis tempora qui similique fuga aliquam cupiditate, consequatur esse id, voluptates est
-					doloremque voluptatum. Aperiam perspiciatis labore tenetur, nostrum quae, aut nobis modi quam accusantium
-					quo, eos commodi eius eum dolores. Ab qui dolorum commodi exercitationem reprehenderit quaerat fuga,
-					ratione iste, quos earum a maxime dolore, quam explicabo. Quia accusantium numquam hic aut libero, minus
-					esse commodi sapiente veniam temporibus soluta quas, recusandae tempora quaerat cumque illo. Facilis amet
-					modi qui error possimus eos praesentium ipsum culpa. Accusantium repellendus, delectus libero optio,
-					facilis earum animi veniam dolor vero voluptatum aperiam officiis doloremque! Quae eaque soluta aut
-					aperiam necessitatibus qui, temporibus quibusdam asperiores?
 				</div>
 			</div>
 		</main>
@@ -330,11 +537,12 @@
 				Политика в отношении обработки персональных данных
 				( Приказ об утверждении ЗПДН)
 				<br>
+				<br>
 				Вёрстка - <a class="developer" target="_blank" href="https://greenbabyborn.ru">greenbabyborn</a>
 			</div>
 		</footer>
 	</div>
-
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<script rel="text/javascript" src="./assets/js/script.js"></script>
 </body>
 
